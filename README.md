@@ -12,18 +12,40 @@ Below are visual demonstrations of SlicerRoboViz capabilities:
 
 ### Robot Visualization Examples
 
-<p align="center">
-  <img src="Media/SRV_Demos_Rob1.gif" alt="Demo 1: Single Robot Visualization" width="30%"/>
-  <img src="Media/SRV_Demos_Rob2.gif" alt="Demo 2: Multi-Robot Setup" width="30%"/>
-  <img src="Media/SRV_Demos_Rob3.gif" alt="Demo 3: Joint Motion Control" width="30%"/>
-</p>
 
-<p align="center">
-  <img src="Media/SRV_Demos_Rob4.gif" alt="Demo 4: Continuum Robot Animation" width="30%"/>
-  <img src="Media/SRV_Demos_Rob5.gif" alt="Demo 5: Real-time State Updates" width="30%"/>
-  <img src="Media/SRV_Demos_Rob6.gif" alt="Demo 6: Robot with Medical Imaging" width="30%"/>
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="Media/SRV_Demos_Rob1.gif" alt="Demo 1" width="250px"/><br/>
+      <sub><i>Wang et al., 2025, Device.</i></sub>
+    </td>
+    <td align="center">
+      <img src="Media/SRV_Demos_Rob2.gif" alt="Demo 2" width="250px"/><br/>
+      <sub><i>Azizkhani et al., 2025, IEEE RA-L.</i></sub>
+    </td>
+    <td align="center">
+      <img src="Media/SRV_Demos_Rob3.gif" alt="Demo 3" width="250px"/><br/>
+      <sub><i>Oliver-Butler et al., 2021, IEEE T-RO.</i></sub>
+    </td>
+  </tr>
+</table>
 
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="Media/SRV_Demos_Rob4.gif" alt="Demo 4" width="250px"/><br/>
+      <sub><i>Webster et al., 2009, Exp. Robotics XI.</i></sub>
+    </td>
+    <td align="center">
+      <img src="Media/SRV_Demos_Rob5.gif" alt="Demo 5" width="250px"/><br/>
+      <sub><i>Custom Design</i></sub>
+    </td>
+    <td align="center">
+      <img src="Media/SRV_Demos_Rob6.gif" alt="Demo 6" width="250px"/><br/>
+      <sub><i>Amanov et al., 2021, IJRR.</i></sub>
+    </td>
+  </tr>
+</table>
 
 
 ## Features
