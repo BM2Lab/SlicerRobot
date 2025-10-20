@@ -1,8 +1,10 @@
-# SlicerRoboViz
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
+
+# SlicerRobot
 
 ## Overview
 
-SlicerRoboViz is a 3D Slicer module for visualizing and animating robotic systems within the medical imaging environment. It provides real-time rendering of both rigid-link and continuum robots by parsing URDF (Unified Robot Description Format) files and displaying them alongside medical imaging data.
+SlicerRobo is a 3D Slicer module for visualizing and animating robotic systems within the medical imaging environment. It provides real-time rendering of both rigid-link and continuum robots by parsing URDF (Unified Robot Description Format) files and displaying them alongside medical imaging data.
 
 ## Demonstrations
 
@@ -158,7 +160,7 @@ SlicerRoboViz extends standard URDF to support continuum robots with the followi
 
 **Author**: Letian Ai  
 **Organization**: BM2 Lab, Georgia Institute of Technology  
-**Module Category**: SlicerRobot  
+  
 
 ## Contributing
 
