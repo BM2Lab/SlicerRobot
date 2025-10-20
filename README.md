@@ -55,28 +55,20 @@ Below are visual demonstrations of SlicerRoboViz capabilities:
 
 ### Core Components
 
-1. **SlicerRoboViz.py**: Main module providing the Slicer widget interface and logic
-2. **RobotVisualizer**: Core visualization engine that handles URDF parsing and rendering
-3. **RenderingHelper**: Manages 3D mesh and geometric primitive rendering
-4. **StateParser**: Processes robot state data and waypoint trajectories
-5. **MathHelper**: Handles coordinate transformations and mathematical operations
+1. **SlicerRoboViz**: Main module providing the Slicer widget interface and logic
+2. **SlicerComm**: Communication module providing Serial, TCP/IP, and UDP communications
+
 
 ### Dependencies
 
 This module utilizes the **urdf_parser_py** library developed by the ROS (Robot Operating System) community:
 
 - **Repository**: [https://github.com/ros/urdf_parser_py](https://github.com/ros/urdf_parser_py)
-- **Purpose**: XML parsing and reflection for URDF files
-- **License**: BSD-3-Clause
 - **Integration**: Embedded in `Dependencies/urdf_parser_py/` with extensions for continuum robots
 
 #### Acknowledgment
 
-We gratefully acknowledge the ROS community and the contributors to the `urdf_parser_py` project:
-- **Original Authors**: Thomas Moulard, David Lu, Kelsey Hawkins
-- **Contributors**: Antonio El Khoury, Eric Cousineau, and many others
-
-The `urdf_parser_py` library provides the foundation for URDF parsing in this module. We have extended it to support custom continuum robot descriptions while maintaining compatibility with standard URDF formats.
+We gratefully acknowledge the ROS community and the contributors to the `urdf_parser_py` project. The library provides the foundation for URDF parsing in this module. We have extended it to support custom continuum robot descriptions while maintaining compatibility with standard URDF formats.
 
 ## Installation
 
@@ -161,14 +153,15 @@ SlicerRoboViz extends standard URDF to support continuum robots with the followi
 **Author**: Letian Ai  
 **Organization**: BM2 Lab, Georgia Institute of Technology  
   
+## TODO
+Add use templates
 
 ## Contributing
 
-Contributions are welcome! Please ensure any modifications maintain compatibility with the standard URDF format and properly cite the `urdf_parser_py` library when using its functionality.
+Contributions are welcome! 
 
 ## License
-
-Please refer to the main repository license. The embedded `urdf_parser_py` library retains its original BSD-3-Clause license.
+BSD-3-Clause License
 
 ## References
 
@@ -179,8 +172,3 @@ Please refer to the main repository license. The embedded `urdf_parser_py` libra
 ## Support
 
 For issues, questions, or feature requests, please contact the BM2 Lab or open an issue in the repository.
-
----
-
-*This module was developed to enable visualization of surgical robots and medical interventional devices within the context of patient-specific medical imaging data.*
-
