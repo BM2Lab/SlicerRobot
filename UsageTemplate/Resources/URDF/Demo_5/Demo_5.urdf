@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="Demo_5_Robot">
+  <link
+    name="unit_1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="joint_unit_1_unit_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.014"
+      rpy="0 0 0" />
+    <parent
+      link="unit_1" />
+    <child
+      link="unit_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="joint_unit_2_unit_3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.01248"
+      rpy="0 0 0" />
+    <parent
+      link="unit_2" />
+    <child
+      link="unit_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_3_unit_4"
+    type="revolute">
+    <origin
+      xyz="0 0 0.01112"
+      rpy="0 0 0" />
+    <parent
+      link="unit_3" />
+    <child
+      link="unit_4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_4">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_4_unit_5"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00991"
+      rpy="0 0 0" />
+    <parent
+      link="unit_4" />
+    <child
+      link="unit_5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_5">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_5_unit_6"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00883"
+      rpy="0 0 0" />
+    <parent
+      link="unit_5" />
+    <child
+      link="unit_6" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_6">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+  
+
+    <joint
+    name="joint_unit_6_unit_7"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00787"
+      rpy="0 0 0" />
+    <parent
+      link="unit_6" />
+    <child
+      link="unit_7" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_7">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+  
+    <joint
+    name="joint_unit_7_unit_8"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00701"
+      rpy="0 0 0" />
+    <parent
+      link="unit_7" />
+    <child
+      link="unit_8" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_8">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_8_unit_9"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00625"
+      rpy="0 0 0" />
+    <parent
+      link="unit_8" />
+    <child
+      link="unit_9" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_9">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_9_unit_10"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00557"
+      rpy="0 0 0" />
+    <parent
+      link="unit_9" />
+    <child
+      link="unit_10" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_10">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_10_unit_11"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00496"
+      rpy="0 0 0" />
+    <parent
+      link="unit_10" />
+    <child
+      link="unit_11" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_11">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+    <joint
+    name="joint_unit_11_unit_12"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00442"
+      rpy="0 0 0" />
+    <parent
+      link="unit_11" />
+    <child
+      link="unit_12" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_12">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+   <joint
+    name="joint_unit_12_unit_13"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00394"
+      rpy="0 0 0" />
+    <parent
+      link="unit_12" />
+    <child
+      link="unit_13" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_13">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_13.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+   <joint
+    name="joint_unit_13_unit_14"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00351"
+      rpy="0 0 0" />
+    <parent
+      link="unit_13" />
+    <child
+      link="unit_14" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_14">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_14.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+   <joint
+    name="joint_unit_14_unit_15"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00313"
+      rpy="0 0 0" />
+    <parent
+      link="unit_14" />
+    <child
+      link="unit_15" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_15">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_15.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+   <joint
+    name="joint_unit_15_unit_16"
+    type="revolute">
+    <origin
+      xyz="0 0 0.00280"
+      rpy="0 0 0" />
+    <parent
+      link="unit_15" />
+    <child
+      link="unit_16" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="unit_16">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/SpiRob_unit_16.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68 0.68 0.68 1" />
+      </material>
+    </visual>
+  </link>
+
+      <segment name="segment_1">
+        <parent name="unit_1"/>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.1">
+            <continuum_unit radius="0.0005" tag="backbone">
+                <color rgba="0.9 0.9 0.9 1.0"/>
+            </continuum_unit>
+           
+        </continuum_body> 
+        
+    </segment>
+
+    <segment name="segment_2">
+            <parent name="unit_1"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.1">
+                <continuum_unit radius="0.0005" tag="backbone">
+                    <color rgba="0.9 0.9 0.9 1.0"/>
+                </continuum_unit>
+
+            </continuum_body>
+
+        </segment>
+
+</robot>

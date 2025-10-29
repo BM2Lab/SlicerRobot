@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="Demo_6_Robot">
+  <link
+    name="base">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/Base_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1" />
+      </material>
+    </visual>
+  </link>
+
+
+    <segment name="segment_1">
+            <parent name="base"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.156">
+                <continuum_unit radius="0.01"  tag="backbone">
+                    <color rgba="0.1 0.1 0.1 0"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.04632" angle="1.3310" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.04632" angle="1.8105" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+                
+                <continuum_unit radius="0.01" offset="0.04632" angle="3.4254" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.04632" angle="3.9049" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.04632" angle="5.5198" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.04632" angle="5.9993" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+            </continuum_body>
+            <disks count="4" span = "0.2 0.8">
+            <color rgba="1.0 0.42 0.21 1.0"/>
+            <geometry>
+                <mesh filename="meshes/Guide_1.STL"/>
+            </geometry>
+            </disks>
+
+        </segment>
+
+  <joint
+    name="middle_proximal_rot_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0"
+      rpy="0 0 0" />
+    <parent
+      link="segment_1" />
+    <child
+      link="middle_proximal_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="middle_proximal_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/Middle_proximal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1" />
+      </material>
+    </visual>
+  </link>
+
+
+
+   <segment name="segment_2">
+            <parent name="middle_proximal_link"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.156">
+                <continuum_unit radius="0.01"  tag="backbone">
+                    <color rgba="0.1 0.1 0.1 0"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.032" angle="-1.9216" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.032" angle=" -1.2198" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+                
+                <continuum_unit radius="0.01" offset="0.032" angle="0.1727" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.032" angle="0.8744" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.032" angle="2.2670" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.032" angle="2.9688" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+            </continuum_body>
+
+            <disks count="4" span = "0.2 0.8">
+            <color rgba="1.0 0.42 0.21 1.0"/>
+            <geometry>
+                <mesh filename="meshes/Guide_2.STL"/>
+            </geometry>
+            </disks>
+
+        </segment>
+
+         <joint
+    name="middle_proximal_2_rot_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0"
+      rpy="0 0 0" />
+    <parent
+      link="segment_2" />
+    <child
+      link="middle_proximal_2_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="middle_proximal_2_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/Middle_proximal_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1" />
+      </material>
+    </visual>
+  </link>
+
+
+   <segment name="segment_3">
+            <parent name="middle_proximal_2_link"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.156">
+                <continuum_unit radius="0.01"  tag="backbone">
+                    <color rgba="0.1 0.1 0.1 0"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.024" angle="1.5707" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+
+                <continuum_unit radius="0.01" offset="0.024" angle="3.6651" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+                
+                <continuum_unit radius="0.01" offset="0.024" angle="5.7595" tag="tendon">
+                    <color rgba="0.1 0.1 0.1 1"/>
+                </continuum_unit>
+            </continuum_body>
+
+            <disks count="4" span = "0.2 0.8">
+            <color rgba="1.0 0.42 0.21 1.0"/>
+            <geometry>
+                <mesh filename="meshes/Guide_3.STL"/>
+            </geometry>
+            </disks>
+
+    </segment>
+
+    <joint
+    name="middle_to_top_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0"
+      rpy="0 0 0" />
+    <parent
+      link="segment_3" />
+    <child
+      link="top_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="top_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/Top.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1" />
+      </material>
+    </visual>
+  </link>
+
+</robot>

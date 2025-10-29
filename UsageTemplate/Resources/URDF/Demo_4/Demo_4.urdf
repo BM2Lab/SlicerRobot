@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="Demo_4_Robot">
+
+    <segment name="segment_base">
+        <parent name="world"/>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.001">
+            <continuum_unit radius="0.0005" tag="backbone">
+                <color rgba="1.0 0.42 0.21 0"/>
+            </continuum_unit>
+        </continuum_body> 
+
+    </segment>
+
+    <segment name="segment_outer_base">
+        <parent name="segment_base"/>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.02">
+            <continuum_unit radius="0.006" tag="backbone">
+                <color rgba="1.0 0.42 0.21 1"/>
+            </continuum_unit>
+        </continuum_body> 
+
+
+    </segment>
+
+     <segment name="segment_inner_base">
+            <parent name="segment_base"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.02">
+                <continuum_unit radius="0.0048" tag="backbone">
+                    <color rgba="0.74 0.76 0.78 1.0"/>
+                </continuum_unit>
+            </continuum_body> 
+
+    </segment>
+
+    <segment name="segment_outer">
+        <parent name="segment_outer_base"/>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.1">
+            <continuum_unit radius="0.0005" tag="backbone">
+                <color rgba="1.0 0.42 0.21 0"/>
+            </continuum_unit>
+        </continuum_body> 
+
+        <disks count="11" span = "0 1">
+            <color rgba="1.0 0.42 0.21 1.0"/>
+            <geometry>
+                <mesh filename="meshes/ring_extrusion_10mm.stl"/>
+            </geometry>
+        </disks>
+
+    </segment>
+
+    <segment name="segment_inner_front">
+            <parent name="segment_inner_base"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.12">
+                <continuum_unit radius="0.0005" tag="backbone">
+                    <color rgba="1.0 0.42 0.21 0"/>
+                </continuum_unit>
+            </continuum_body> 
+
+            <disks count="16" span = "0 1">
+            <color rgba="0.74 0.76 0.78 1.0"/>
+            <geometry>
+             
+                <mesh filename="meshes/ring_extrusion_8mm.stl"/>
+            </geometry>
+        </disks>
+
+    </segment>
+
+        <segment name="segment_inner_back">
+            <parent name="segment_inner_front"/>
+             <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <continuum_body initial_length="0.06">
+                <continuum_unit radius="0.0005" tag="backbone">
+                    <color rgba="1.0 0.42 0.21 0"/>
+                </continuum_unit>
+            </continuum_body> 
+
+
+            <disks count="8" span = "0 1">
+            <color rgba="0.74 0.76 0.78 1.0"/>
+            <geometry>
+             
+                <mesh filename="meshes/ring_extrusion_8mm.stl"/>
+            </geometry>
+        </disks>
+
+    </segment>
+
+    
+</robot>

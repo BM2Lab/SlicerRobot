@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="Demo_2_Robot">
+
+    <segment name="segment_base">
+        <parent name="world"/>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.2">
+            <continuum_unit radius="0.001"  tag="backbone">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </continuum_unit>
+            <continuum_unit radius="0.0003" offset="0.008" angle="0" tag="tendon">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </continuum_unit>
+            <continuum_unit radius="0.0003" offset="0.008" angle="1.5707" tag="tendon">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </continuum_unit>
+            <continuum_unit radius="0.0003" offset="0.008" angle="3.1415" tag="tendon">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </continuum_unit>
+            <continuum_unit radius="0.0003" offset="0.008" angle="4.7123" tag="tendon">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </continuum_unit>
+        
+        </continuum_body> 
+
+        <disks count="12">
+            <color rgba="1.0 0.42 0.21 1.0"/>
+            <geometry>
+                <cylinder radius="0.012" height="0.003"/>
+            </geometry>
+        </disks>
+
+    </segment>
+
+</robot>

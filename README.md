@@ -103,6 +103,8 @@ We gratefully acknowledge the ROS community and the contributors to the `urdf_pa
 
 ## Usage
 
+We provide a **UsageTemplate** module for fast implementation.
+
 ### Loading a Robot
 
 1. Open the SlicerRoboViz module in 3D Slicer
@@ -125,7 +127,7 @@ import slicer
 from SlicerRoboViz import SlicerRoboVizLogic
 
 # Get the logic instance
-logic = slicer.modules.SlicerRoboVizWidget.logic
+logic = slicer.util.getModuleLogic("SlicerRoboViz")
 
 # Update joint positions (for rigid-link robots)
 robot_name = "your_robot_name"
@@ -176,7 +178,8 @@ SlicerRoboViz extends standard URDF to support continuum robots with the followi
 **Organization**: BM2 Lab, Georgia Institute of Technology  
   
 ## TODO
-Add use templates
+- Update usage templates.
+- Catheter calibration module.
 
 ## Contributing
 

@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="Demo_1_Robot">
+  <!-- #############################################The first tool############################################################## -->
+  <link
+    name="wrist_shaft">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.39 0.39 0.39 1.0" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="wrist_rot_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0"
+      rpy="0 0 0" />
+    <parent
+      link="segment_1" />
+    <child
+      link="wrist_shaft" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+  <link
+    name="wrist_applier_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_applier_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.51 0.51 0.51 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="applier_rot_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0091"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="wrist_shaft" />
+    <child
+      link="wrist_applier_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_clip_link_1">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_clip_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="wrist_clip_rot_joint_1"
+    type="revolute">
+    <origin
+      xyz="0.0091 0 0"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="wrist_applier_link" />
+    <child
+      link="wrist_clip_link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_clip_link_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_clip_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="wrist_clip_rot_joint_2"
+    type="revolute">
+    <origin
+      xyz="0.0091 0 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="wrist_applier_link" />
+    <child
+      link="wrist_clip_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+<!-- #############################################The second tool############################################################## -->
+
+ <link
+    name="wrist_shaft_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.39 0.39 0.39 1.0" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="wrist_rot_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0"
+      rpy="0 0 0" />
+    <parent
+      link="segment_2" />
+    <child
+      link="wrist_shaft_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+  <link
+    name="wrist_applier_link_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_applier_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.51 0.51 0.51 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="applier_rot_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0091"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="wrist_shaft_2" />
+    <child
+      link="wrist_applier_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_clip_link_1_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_needle_driver_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="wrist_clip_rot_joint_1_2"
+    type="revolute">
+    <origin
+      xyz="0.0091 0 0"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="wrist_applier_link_2" />
+    <child
+      link="wrist_clip_link_1_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_clip_link_2_2">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_needle_driver_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="wrist_clip_rot_joint_2_2"
+    type="revolute">
+    <origin
+      xyz="0.0091 0 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="wrist_applier_link_2" />
+    <child
+      link="wrist_clip_link_2_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+<!-- #################################################The third tool######################################################## -->
+ <link
+    name="wrist_shaft_3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.39 0.39 0.39 1.0" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="wrist_rot_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0"
+      rpy="0 0 0" />
+    <parent
+      link="segment_3" />
+    <child
+      link="wrist_shaft_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+  <link
+    name="wrist_applier_link_3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_applier_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.51 0.51 0.51 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="applier_rot_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0091"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="wrist_shaft_3" />
+    <child
+      link="wrist_applier_link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_clip_link_1_3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_forcep_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="wrist_clip_rot_joint_1_3"
+    type="revolute">
+    <origin
+      xyz="0.0091 0 0"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="wrist_applier_link_3" />
+    <child
+      link="wrist_clip_link_1_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_clip_link_2_3">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/wrist_forcep_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98 0.98 0.98 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="wrist_clip_rot_joint_2_3"
+    type="revolute">
+    <origin
+      xyz="0.0091 0 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="wrist_applier_link_3" />
+    <child
+      link="wrist_clip_link_2_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+
+
+<!-- ##################################################################################################################### -->
+      <segment name="segment_0">
+            <parent name="world"/>
+           
+            <origin
+              xyz="0 0 0"
+              rpy="0 0 0" />
+            <continuum_body initial_length="0.08">
+                <continuum_unit radius="0.015" tag="backbone">
+                    <color rgba="0.26 0.26 0.26 1.0"/>
+                </continuum_unit>
+            </continuum_body> 
+
+      </segment>
+
+    <segment name="segment_1">
+        <parent name="segment_0"/>
+        
+        <origin
+          xyz="0 -0.008 -0.020"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.1">
+            <continuum_unit radius="0.004" tag="backbone">
+                <color rgba="0.75 0.75 0.75 1.0"/>
+            </continuum_unit>
+        </continuum_body> 
+
+    </segment>
+
+        <segment name="segment_2">
+            <parent name="segment_0"/>
+            
+            <origin
+              xyz="0.0065 0.0065 -0.020"
+              rpy="0 0 -30" />
+            <continuum_body initial_length="0.1">
+                <continuum_unit radius="0.004" tag="backbone">
+                    <color rgba="0.75 0.75 0.75 1.0"/>
+                </continuum_unit>
+            </continuum_body> 
+
+        </segment>
+
+        <segment name="segment_3">
+            <parent name="segment_0"/>
+            
+            <origin
+              xyz="-0.0065 0.0065 -0.020"
+              rpy="0 0 30" />
+            <continuum_body initial_length="0.1">
+                <continuum_unit radius="0.004" tag="backbone">
+                    <color rgba="0.75 0.75 0.75 1.0"/>
+                </continuum_unit>
+            </continuum_body> 
+
+        </segment>
+
+
+        
+
+</robot>
