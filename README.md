@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 
-# SlicerRobot
+# SlicerCR
 
 ## Overview
 
