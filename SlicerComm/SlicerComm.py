@@ -18,7 +18,8 @@ from slicer.parameterNodeWrapper import (
 from slicer import vtkMRMLScalarVolumeNode
 
 import qt
-from Scripts.Logics.communication_manager import CommunicationManager
+import Scripts.Logics.install_dependency as ID
+ID.install_dependencies()
 from Scripts.Logics.communication_serial import SerialCommunication
 from Scripts.Logics.communicaton_TCPIP import TCPIPCommunication
 from Scripts.Logics.communication_UDP import UDPCommunication
@@ -33,7 +34,7 @@ class SlicerComm(ScriptedLoadableModule):
     def __init__(self, parent):
         ScriptedLoadableModule.__init__(self, parent)
         self.parent.title = _("SlicerComm")  
-        self.parent.categories = ["SlicerRobot"]
+        self.parent.categories = ["SlicerCR"]
         self.parent.dependencies = []  # TODO: add here list of module names that this module requires
         self.parent.contributors = ["Letian Ai (BM2)"] 
         # TODO: update with short description of the module and a link to online module documentation

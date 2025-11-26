@@ -35,7 +35,7 @@ class SlicerRoboViz(ScriptedLoadableModule):
     def __init__(self, parent):
         ScriptedLoadableModule.__init__(self, parent)
         self.parent.title = _("SlicerRoboViz")        
-        self.parent.categories = ["SlicerRobot"]  
+        self.parent.categories = ["SlicerCR"]  
         self.parent.dependencies = []  
         self.parent.contributors = ["Letian Ai, BM2 Lab in Georgia Institute of Technology"] 
         self.parent.helpText = _("""This a scripted loadable module that provides functionality to visualize robot motion in Slicer.""")

@@ -27,6 +27,16 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="AddNewCommunicationPushBtn">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="text">
+         <string>Add Communication</string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="0">
        <widget class="QComboBox" name="ProtocalSelection">
         <item>
@@ -44,16 +54,6 @@
           <string>UDP</string>
          </property>
         </item>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="AddNewCommunicationPushBtn">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
-        </property>
-        <property name="text">
-         <string>Add Communication</string>
-        </property>
        </widget>
       </item>
      </layout>

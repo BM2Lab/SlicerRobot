@@ -18,7 +18,6 @@ import numpy as np
 import time
 import csv
 from datetime import datetime
-import matplotlib.pyplot as plt
 import io
 #
 # UsageTemplate
@@ -33,7 +32,7 @@ class UsageTemplate(ScriptedLoadableModule):
     def __init__(self, parent):
         ScriptedLoadableModule.__init__(self, parent)
         self.parent.title = _("UsageTemplate")  
-        self.parent.categories = ["SlicerRobot"]
+        self.parent.categories = ["SlicerCR"]
         self.parent.dependencies = []  
         self.parent.contributors = ["Letian Ai (BM2 Lab, Georgia Institute of Technology)"]  
         self.parent.helpText = _("""
