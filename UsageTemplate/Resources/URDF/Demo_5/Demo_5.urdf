@@ -9,7 +9,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_1.STL" />
+          filename="meshes/SpiRob_unit_1.stl" />
       </geometry>
       <material
         name="">
@@ -46,7 +46,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_2.STL" />
+          filename="meshes/SpiRob_unit_2.stl" />
       </geometry>
       <material
         name="">
@@ -83,7 +83,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_3.STL" />
+          filename="meshes/SpiRob_unit_3.stl" />
       </geometry>
       <material
         name="">
@@ -120,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_4.STL" />
+          filename="meshes/SpiRob_unit_4.stl" />
       </geometry>
       <material
         name="">
@@ -157,7 +157,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_5.STL" />
+          filename="meshes/SpiRob_unit_5.stl" />
       </geometry>
       <material
         name="">
@@ -194,7 +194,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_6.STL" />
+          filename="meshes/SpiRob_unit_6.stl" />
       </geometry>
       <material
         name="">
@@ -232,7 +232,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_7.STL" />
+          filename="meshes/SpiRob_unit_7.stl" />
       </geometry>
       <material
         name="">
@@ -269,7 +269,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_8.STL" />
+          filename="meshes/SpiRob_unit_8.stl" />
       </geometry>
       <material
         name="">
@@ -306,7 +306,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_9.STL" />
+          filename="meshes/SpiRob_unit_9.stl" />
       </geometry>
       <material
         name="">
@@ -343,7 +343,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_10.STL" />
+          filename="meshes/SpiRob_unit_10.stl" />
       </geometry>
       <material
         name="">
@@ -380,7 +380,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_11.STL" />
+          filename="meshes/SpiRob_unit_11.stl" />
       </geometry>
       <material
         name="">
@@ -417,7 +417,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_12.STL" />
+          filename="meshes/SpiRob_unit_12.stl" />
       </geometry>
       <material
         name="">
@@ -454,7 +454,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_13.STL" />
+          filename="meshes/SpiRob_unit_13.stl" />
       </geometry>
       <material
         name="">
@@ -491,7 +491,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_14.STL" />
+          filename="meshes/SpiRob_unit_14.stl" />
       </geometry>
       <material
         name="">
@@ -528,7 +528,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_15.STL" />
+          filename="meshes/SpiRob_unit_15.stl" />
       </geometry>
       <material
         name="">
@@ -565,7 +565,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/SpiRob_unit_16.STL" />
+          filename="meshes/SpiRob_unit_16.stl" />
       </geometry>
       <material
         name="">

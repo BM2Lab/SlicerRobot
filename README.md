@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 
-# SlicerRobot
+# SlicerCR
 
 ## Overview
 
@@ -96,10 +96,10 @@ We gratefully acknowledge the ROS community and the contributors to the `urdf_pa
 
 1. Install [3D Slicer](https://download.slicer.org/) (version 5.0 or later recommended)
 2. Clone or download this repository
-3. In 3D Slicer, go to: `Edit` → `Application Settings` → `Modules` → `Additional module paths`
-4. Add the path to the `SlicerRobot` directory
+3. In 3D Slicer, go to: `Modules` → `Extension Wizard` → `Select Extension` 
+4. Choose `SlicerCR` directory 
 5. Restart 3D Slicer
-6. Find "SlicerRoboViz" under the "SlicerRobot" category in the module selector
+6. Find "SlicerRoboViz" under the "SlicerCR" category in the module selector
 
 ## Usage
 
