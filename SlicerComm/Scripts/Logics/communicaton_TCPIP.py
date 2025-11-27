@@ -242,57 +242,6 @@ class TCPIPCommunication:
             print(f"TCP/IP communication error: {e}")
             return None
     
-    
-    
-    # def readBinaryData(self, timeout: float = 5.0) -> Optional[bytes]:
-    #     """Read binary data (like images) from the device"""
-    #     if not self.is_connected or not self.socket:
-    #         return None
-        
-    #     try:
-    #         # Set timeout for this read operation
-    #         self.socket.settimeout(timeout)
-            
-    #         # First, read the 4-byte length prefix
-    #         length_data = self.socket.recv(4)
-    #         if len(length_data) != 4:
-    #             print("Failed to read length prefix")
-    #             return None
-            
-    #         # Unpack the length (big-endian unsigned int)
-    #         data_length = struct.unpack("!I", length_data)[0]
-            
-    #         # Read the actual data
-    #         received_data = b""
-    #         bytes_remaining = data_length
-            
-    #         while bytes_remaining > 0:
-    #             # Read in chunks, but don't exceed remaining bytes
-    #             chunk_size = min(1048576, bytes_remaining)
-    #             chunk = self.socket.recv(chunk_size)
-                
-    #             if not chunk:  # Connection closed unexpectedly
-    #                 print(f"Connection closed while reading data. Received {len(received_data)}/{data_length} bytes")
-    #                 break
-                
-    #             received_data += chunk
-    #             bytes_remaining -= len(chunk)
-            
-            
-    #         if len(received_data) == data_length:
-    #             # print(f"Successfully received {len(received_data)} bytes")
-    #             return received_data
-    #         else:
-    #             print(f"Incomplete data received: {len(received_data)}/{data_length} bytes")
-    #             return None
-            
-    #     except socket.timeout:
-    #         print(f"Timeout: No binary data received within {timeout} seconds")
-    #         return None
-    #     except Exception as e:
-    #         print(f"Error reading binary data: {e}")
-    #         return None
-
     def readBinaryData(self) -> Optional[bytes]:
         """Read binary data (like images) from the device"""
         if not self.is_connected or not self.socket:
