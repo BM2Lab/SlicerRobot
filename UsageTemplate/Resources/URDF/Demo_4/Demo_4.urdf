@@ -94,7 +94,7 @@
             </continuum_body> 
 
 
-            <disks count="8" span = "0 1">
+        <disks count="8" span = "0 1">
             <color rgba="0.74 0.76 0.78 1.0"/>
             <geometry>
              

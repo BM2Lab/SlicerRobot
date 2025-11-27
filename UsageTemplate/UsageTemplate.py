@@ -127,6 +127,9 @@ class UsageTemplateWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         elif self.ui.DemoNumberDropDown.currentText == "Demo 6":
             self.demo_flag = 6
             success = self.demo6()
+        elif self.ui.DemoNumberDropDown.currentText == "Demo 7":
+            self.demo_flag = 7
+            success = self.demo7()
 
     def checkRobotExists(self, robot_name):
         SRVRobot_node = slicer.mrmlScene.GetFirstNodeByName("SRVRobotsNode")
@@ -331,7 +334,51 @@ class UsageTemplateWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
             return success
         else:
             return False
-    
+    def demo7(self):
+        """
+        Demo 7: Tendon-driven catheter with multiple Tendons
+        """
+        robot_name = "Demo_7_Robot"
+        N = 20  # num of samples along shape
+        d = 2
+        
+        # Define parameters for each waypoint set: [L0, amp]
+        waypoint_params = [
+            {'L0': 200, 'amp': 0.5, 'steps': 100},   # waypoints_1
+            {'L0': 150, 'amp': 2, 'steps': 80},   # waypoints_2
+            {'L0': 100, 'amp': 5, 'steps': 60}    # waypoints_3
+        ]
+        
+        waypoints_list = []
+        for params in waypoint_params:
+            L0 = params['L0']
+            amp = params['amp']
+            steps = params['steps']
+            l_base = L0 * np.ones(4)
+            # Zero-sum actuation trajectory (sum(l_i) stays constant) - periodic using sin/cos
+            # dl1 = 2*amp * np.sin(self.count/steps)  # Periodic sine wave
+            dl1 = 0
+            dl3 = -dl1  # Opposite of dl1
+            dl2 = amp * np.cos(self.count/steps)  # Periodic cosine wave (90° phase shift from sin)
+            dl4 = -dl2  # Opposite of dl2
+            # Combine base lengths with periodic variations
+            L = np.array([
+                l_base[0] + dl1,
+                l_base[1] + dl2,
+                l_base[2] + dl3,
+                l_base[3] + dl4
+            ])
+            # Get waypoints for this segment
+            waypoints_list.append(self.ccArc(L, d, N))
+        
+        # Concatenate all waypoint sets
+        waypoints = np.concatenate(waypoints_list, axis=0)
+        if self.checkRobotExists(robot_name):
+            success, _= self.SRV_logic.updateRobotState(robot_name, backbone_waypoints=waypoints)
+            return success
+        else:
+            return False
+
 
     def softArmForwardKinematics(self, L0, q, r, xi):
         """L0 : float
@@ -548,16 +595,115 @@ class UsageTemplateWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         waypoints = np.stack([x, y, z], axis=-1)  # (num_points, 3)
         return waypoints[np.newaxis, ...]         # (1, num_points, 3)
     
+    def lengths2arc4(self, l, d):
+        """
+        Args:
+            l: array-like of shape (4,)
+                Tendon lengths [l1, l2, l3, l4]
+            d: float
+                Radial distance to tendon
+        Returns:
+            kappa, phi, ell: float
+                Curvature, plane angle, arc length
+        """
+        l = np.asarray(l).flatten()
+        ell = np.mean(l)  # inextensible center rod
+        phi = np.arctan2(l[3] - l[1], l[2] - l[0])
+        
+        num = (l[0] - 3*l[1] + l[2] + l[3]) * np.sqrt((l[3] - l[1])**2 + (l[2] - l[0])**2)
+        den = d * np.sum(l) * (l[3] - l[1])
+        
+        if ell <= 1e-12:
+            kappa = 0.0
+        elif den == 0:
+            kappa = 0.0
+        else:
+            kappa = num / den
+        
+        return kappa, phi, ell
+    
 
+    def T_cc(self,kappa, phi, s):
+        """
+        Args:
+                kappa: float
+                    Curvature
+                phi: float
+                    Plane angle
+                s: float
+                    Arc length
+        Returns:
+                T: numpy.ndarray
+                    Transformation matrix
+        """
+        epsk = 1e-9
+        cphi = np.cos(phi)
+        sphi = np.sin(phi)
+
+        if abs(kappa) < epsk:
+            # Straight: rotate about z by phi, then translate along +z
+            R = np.array([[cphi, -sphi, 0],
+                        [sphi,  cphi, 0],
+                        [0,     0,    1]])
+            p = np.array([0, 0, s])
+            T = np.block([[R, p.reshape(3,1)],
+                        [np.zeros((1,3)), np.array([[1]])]])
+            return T
+
+        th = kappa * s        # bend angle θ = κ s
+        c = np.cos(th)
+        sn = np.sin(th)
+
+        # In-plane (y-bend) transform
+        Ry = np.array([[ c, 0,  sn],
+                    [ 0, 1,   0],
+                    [-sn, 0,  c]])
+        p_in = np.array([(1 - c)/kappa, 0, sn/kappa])
+
+        # Rotate the whole arc about z by phi
+        Rz = np.array([[cphi, -sphi, 0],
+                    [sphi,  cphi, 0],
+                    [0,     0,    1]])
+
+        R = Rz @ Ry
+        p = Rz @ p_in
+
+        T = np.block([[R, p.reshape(3,1)],
+                    [np.zeros((1,3)), np.array([[1]])]])
+        return T
+    
+    def ccArc(self,l, d, N):
+        """
+        Args:
+            l: array-like of shape (4,)
+                Tendon lengths [l1, l2, l3, l4]
+            d: float
+                Radial distance to tendon
+            N: int
+                Number of discretization points
+        Returns:
+            xyz: numpy.ndarray of shape (N, 3)
+                Cartesian coordinates along the arc
+        """
+        # Step 1: compute CC parameters
+        kappa, phi, ell = self.lengths2arc4(l, d)
+
+        # Step 2: discretize along the arc
+        s = np.linspace(0, ell, N)
+        xyz = np.zeros((N, 3))
+
+        for i in range(N):
+            T = self.T_cc(kappa, phi, s[i])   # 4x4 matrix
+            xyz[i, :] = T[0:3, 3]        # take translation part (column 4 in MATLAB)
+        xyz = xyz[np.newaxis, :, :]
+        return xyz
     ###################################################################
     ##########################Built in Functions#######################
     ###################################################################
     def cleanup(self) -> None:
         """Called when the application closes and the module widget is destroyed."""
         self.removeObservers()
-        self.resetTimingStats()
-        if self.model_interaction:
-            self.model_interaction.cleanAll()
+        
 
 
 

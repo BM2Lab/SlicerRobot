@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="Demo_7_Robot">
+
+    <segment name="segment_1">
+        <parent name="world"/>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <continuum_body initial_length="0.2">
+            <continuum_unit radius="0.006"  tag="backbone">
+                <color rgba="0.98 0.98 0.98 1.0"/>
+            </continuum_unit>
+           
+        </continuum_body> 
+        
+    </segment>
+
+    <segment name="segment_2">
+            <parent name="segment_1"/>
+            <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+            <continuum_body initial_length="0.2">
+                <continuum_unit radius="0.004"  tag="backbone">
+                    <color rgba="0.66 0.66 0.66 1.0"/>
+                </continuum_unit>
+
+            </continuum_body>
+
+        </segment>
+
+        <segment name="segment_3">
+            <parent name="segment_2"/>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+
+            <continuum_body initial_length="0.2">
+                <continuum_unit radius="0.002"  tag="backbone">
+                    <color rgba="0.45 0.45 0.45 1.0"/>
+                </continuum_unit>
+
+            </continuum_body>
+
+        </segment>
+
+    
+</robot>
